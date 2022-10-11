@@ -97,12 +97,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Menang()
     {
-        for (int i = 10; i > 0; i--)
+        isMoving = false;
+        for (int i = 5; i > 0; i--)
         {
             myText.text = "Buset, seriusan menang?\n" + i;
             yield return new WaitForSeconds(1);
         }
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Credit");
     }
 
     void FixedUpdate()
@@ -133,7 +134,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void explode()
+    public void explode()
     {
         gameObject.SetActive(false);
 
@@ -165,7 +166,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void createPiece(int x, int y, int z)
+    public void createPiece(int x, int y, int z)
     {
 
         //create piece
@@ -180,5 +181,6 @@ public class PlayerController : MonoBehaviour
         //add rigidbody and set mass
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
+        Destroy(piece, 3);
     }
 }

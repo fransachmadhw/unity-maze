@@ -26,5 +26,6 @@ public class ResetScript : MonoBehaviour
         player.ResetButton.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
         player.isMoving = true;
+        // Destroy(player.gameObject.piece, 1);
     }
 }
