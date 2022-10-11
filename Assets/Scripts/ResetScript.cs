@@ -24,7 +24,7 @@ public class ResetScript : MonoBehaviour
         bola.transform.position = reset;
         player.myText.text = "";
         player.ResetButton.gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
         player.isMoving = true;
-
     }
 }
