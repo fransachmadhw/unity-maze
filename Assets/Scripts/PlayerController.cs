@@ -128,10 +128,6 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log("Menang");
                 StartCoroutine(Menang());
             }
-            else
-            {
-                SceneManager.LoadScene("Level" + AngkaScene);
-            }
         }
     }
     public void explode()

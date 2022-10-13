@@ -21,11 +21,14 @@ public class FinishTrigger : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         int level = player.AngkaScene;
-        if(collider.name == "Player")
+        if (collider.name == "Player")
         {
             level += 1;
             // Debug.Log("masuk " + collider.name);
-            SceneManager.LoadScene("Level" + level);
+            if (level < 4)
+            {
+                SceneManager.LoadScene("Level" + level);
+            }
         }
     }
 }

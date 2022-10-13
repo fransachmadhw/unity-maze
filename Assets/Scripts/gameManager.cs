@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
+    public PlayerController player;
     public bool pause = false;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pause == false)
+        if (!pause)
         {
             // if(pause==true){
             //     Time.timeScale = 1;
@@ -27,13 +28,14 @@ public class gameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 pause = true;
+                player.myText.text = "Paused";
             }
         }
-        else if (pause == true && Input.anyKeyDown)
+        else if (pause && Input.anyKeyDown)
         {
+            player.myText.text = "";
             Time.timeScale = 1;
             pause = false;
-
         }
     }
 }
