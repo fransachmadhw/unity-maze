@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 reset;
     public int AngkaScene;
     public Text myText;
+    public Text myText2;
     public bool isMoving = true;
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;

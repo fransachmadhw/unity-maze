@@ -29,11 +29,13 @@ public class gameManager : MonoBehaviour
                 Time.timeScale = 0;
                 pause = true;
                 player.myText.text = "Paused";
+                player.myText2.gameObject.SetActive(true);
             }
         }
         else if (pause && Input.anyKeyDown)
         {
             player.myText.text = "";
+            player.myText2.gameObject.SetActive(false);
             Time.timeScale = 1;
             pause = false;
         }
