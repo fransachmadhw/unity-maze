@@ -16,7 +16,7 @@ public class StartMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     public void Play()
@@ -29,8 +29,17 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("Credit");
     }
 
+    public void Setting()
+    {
+        SceneManager.LoadScene("Setting");
+    }
+
     public void Exit()
     {
         Application.Quit();
+    }
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("Start Menu");
     }
 }
