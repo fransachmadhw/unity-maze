@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject player;
     private Rigidbody rigid;
+    private Animation idle;
     public Vector3 reset;
     public int AngkaScene;
     public Text myText;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody>();
+        idle = gameObject.GetComponent<Animation>();
+
         StartCoroutine(Mulai());
 
         //calculate pivot distance
@@ -65,6 +68,16 @@ public class PlayerController : MonoBehaviour
                 //  sampleText.text = "Mundur";
             }
         }
+        if (rigid.velocity.x < 1 && rigid.velocity.x > -1 && rigid.velocity.y < 1 && rigid.velocity.y > -1 && rigid.velocity.z < 1 && rigid.velocity.z > -1)
+        {
+            idle.Play();
+        }
+        else
+        {
+            idle.Stop();
+            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        // Debug.Log(rigid.velocity);
     }
 
     IEnumerator Mulai()
@@ -123,8 +136,8 @@ public class PlayerController : MonoBehaviour
         }
         // if (collision.gameObject.tag == "Finish")
         // {
-        //     // AngkaScene += 1;
-        //     if (AngkaScene > 3)
+        //     AngkaScene += 1;
+        //     if (AngkaScene == 4)
         //     {
         //         // Debug.Log("Menang");
         //         StartCoroutine(Menang());

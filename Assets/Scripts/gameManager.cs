@@ -34,10 +34,10 @@ public class gameManager : MonoBehaviour
         }
         else if (pause && Input.anyKeyDown)
         {
+            pause = false;
             player.myText.text = "";
             player.myText2.gameObject.SetActive(false);
             Time.timeScale = 1;
-            pause = false;
         }
     }
 }
