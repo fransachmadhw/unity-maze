@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         myText.text = "";
     }
 
-    IEnumerator Menang()
+    public IEnumerator Menang()
     {
         isMoving = false;
         for (int i = 5; i > 0; i--)
@@ -121,15 +121,15 @@ public class PlayerController : MonoBehaviour
             // StartCoroutine(Kalah());
             explode();
         }
-        if (collision.gameObject.tag == "Finish")
-        {
-            // AngkaScene += 1;
-            if (AngkaScene == 4)
-            {
-                // Debug.Log("Menang");
-                StartCoroutine(Menang());
-            }
-        }
+        // if (collision.gameObject.tag == "Finish")
+        // {
+        //     // AngkaScene += 1;
+        //     if (AngkaScene > 3)
+        //     {
+        //         // Debug.Log("Menang");
+        //         StartCoroutine(Menang());
+        //     }
+        // }
     }
     public void explode()
     {

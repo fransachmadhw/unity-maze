@@ -29,6 +29,10 @@ public class FinishTrigger : MonoBehaviour
             {
                 SceneManager.LoadScene("Level" + level);
             }
+            else
+            {
+                StartCoroutine(player.Menang());
+            }
         }
     }
 }
