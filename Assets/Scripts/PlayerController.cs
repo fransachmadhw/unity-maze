@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Finish")
         {
-            AngkaScene += 1;
+            // AngkaScene += 1;
             if (AngkaScene == 4)
             {
                 // Debug.Log("Menang");
